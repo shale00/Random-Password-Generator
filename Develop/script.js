@@ -18,10 +18,12 @@ var length = ""
 var lowercase = ["a","b","c","d","e","f","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var uppercase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 var numeric = ["1","2","3","4","5","6","7","8","9","0"];
-var special = ["!","@","#","$,","%","^","&","*","(",")"];
+var special = ["!","@","#","$","%","^","&","*","(",")"];
 //my new array created by confirm choices
 var possibleChar = []
-var randomPassword = ""
+// var randomPassword = ""
+// var randomLowercase = ""
+// var selectLowercase = ""
 
 function generatePassword () {
   passwordLength();
@@ -51,25 +53,54 @@ function chooseCharacters() {
   var selectUppercase = confirm("Include uppercase letters?");
   var selectNumeric = confirm("Include numbers?");
   var selectSpecial = confirm("Include special characters?");
+  var randomPassword = []
 
     if (!selectLowercase && !selectUppercase && !selectNumeric && !selectSpecial) {
     window.alert("You must select at least one character type.");
     chooseCharacters();
   } 
+  //If character type is selected, concatenate it into our custom array
     if (selectLowercase) {
       possibleChar = possibleChar.concat(lowercase);
+
+
+      //To make sure at least one character from each selection is added in the array, push a random character from the selected character type to push into the custom array
+      console.log("lowercase");
+      
+      
+      randomPassword.push(lowercase[Math.floor(Math.random() * 23)]);
+
+      console.log(randomPassword);
+      // console.log(lowercase.length)
     }
     if (selectUppercase) {
       possibleChar = possibleChar.concat(uppercase);
+
+      // randomPassword.push(uppercase[Math.floor(Math.random() * 23)]);
+      // console.log(randomPassword);
+
+
     }
     if (selectNumeric) {
       possibleChar = possibleChar.concat(numeric);
+
+      // randomPassword.push(numeric[Math.floor(Math.random() * 23)]);
+      // console.log(randomPassword);
+
+
     }
     if (selectSpecial) {
       possibleChar = possibleChar.concat(special);
-    }
-    
 
+      // randomPassword.push(special[Math.floor(Math.random() * 23)]);
+      // console.log(randomPassword);
+
+
+    }
+    var randomPassword = ""
+    // console.log(randomLowercase);
+    // console.log(randomItem(lowercase))
+  }
 
 //Step 5
 //   When I answer each prompt
@@ -79,16 +110,24 @@ function chooseCharacters() {
 }
 
 
-}
+
+
 
 
 //Step 6
 //   When all prompts are answered 
 //      Then a password is generated that matches the selected criteria
 
-function randomize() {
-  randomPassword = possibleChar(Math.floor(Math.random()* possibleChar.length));
-}
+  // for (i = 0; i < possibleChar.length; i++) {
+  // //  var randomChar = (Math.floor(Math.random() * possibleChar.length));
+  // //  randomPassword += possibleChar.charAt(randomChar, randomChar + 1)
+  // var character = Math.floor(Math.random() * possibleChar.length);
+  // randomPassword += possibleChar.charAt(character, character + 1);
+  // return randomPassword;
+
+
+  // }
+
 //Step 7
 //  When the password is generated
 //      The password is either displayed in an alert or written to the page
