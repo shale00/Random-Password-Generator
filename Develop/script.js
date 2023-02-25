@@ -24,6 +24,9 @@ var possibleChar = []
 var randomPassword = []
 // var randomLowercase = ""
 // var selectLowercase = ""
+var confirmArr = [];
+var newPassLength = "";
+var guaranteeChar = [];
 
 function generatePassword () {
   passwordLength();
@@ -63,43 +66,56 @@ function chooseCharacters() {
       possibleChar = possibleChar.concat(lowercase);
 
       //To make sure at least one character from each selection is added in the array, push a random character from the selected character type to push into the custom array
-      randomPassword.push(lowercase[Math.floor(Math.random() * lowercase.length)]);
-      console.log(randomPassword);
+      guaranteeChar.push(lowercase[Math.floor(Math.random() * lowercase.length)]);
+      confirmArr.push("y");
       
     }
     if (selectUppercase) {
       possibleChar = possibleChar.concat(uppercase);
-      randomPassword.push(uppercase[Math.floor(Math.random() * uppercase.length)]);
-      console.log(randomPassword);
+      guaranteeChar.push(uppercase[Math.floor(Math.random() * uppercase.length)]);
+      confirmArr.push("y");
 
     }
     if (selectNumeric) {
       possibleChar = possibleChar.concat(numeric);
-      randomPassword.push(numeric[Math.floor(Math.random() * numeric.length)]);
-      console.log(randomPassword);
+      guaranteeChar.push(numeric[Math.floor(Math.random() * numeric.length)]);
+      confirmArr.push("y");
       
     }
     if (selectSpecial) {
       possibleChar = possibleChar.concat(special);
-      randomPassword.push(special[Math.floor(Math.random() * special.length)]);
-      console.log(randomPassword);
+      guaranteeChar.push(special[Math.floor(Math.random() * special.length)]);
+      confirmArr.push("y");
 
     }
-    // genPass() => (passLength - 1(i) ) {
-    //   for (i = 0; i < )
-    // }
+
 
   }
+
+  newPassLength = passLength - (confirmArr.length);
+
+  function selectRandomItems(array, amount) {
+    var result = [];
+    for (let i = 0; i < amount; i++) {
+     var randomIndex = Math.floor(Math.random() * array.length);
+     result.push(array[randomIndex]);
+    }
+    return result;
+  }
+    var randomItems = selectRandomItems(possibleChar, newPassLength);
+    console.log(randomItems);
+    console.log(confirmArr);
+
+    randomPassword = guaranteeChar.concat(randomItems);
+
+
 
 //Step 5
 //   When I answer each prompt
 //       My input should be validated and at least one character type should be selected
 
-// function genPass() {
-//   if 
 
-// }
-
+return randomPassword;
 
 }
 
@@ -112,10 +128,17 @@ function chooseCharacters() {
 //   When all prompts are answered 
 //      Then a password is generated that matches the selected criteria
 
-// function writePass(randomPassword) {
-//   for (i = 0; i < possibleChar.length; i++) {
-//   // //  var randomChar = (Math.floor(Math.random() * possibleChar.length));
-//   // //  randomPassword += possibleChar.charAt(randomChar, randomChar + 1)
+
+
+// function writePass(possibleChar, newPassLength ) {
+//   var result = [];
+//   for ( i = 0; i < possibleChar.length; i++) {
+//    var randomChar = (Math.floor(Math.random() * newPassLength));
+//    result.push(randomChar[randomIndex]);
+//   }
+//   console.log(result)
+// }
+    // randomPassword += possibleChar.charAt(randomChar, randomChar + 1)
 //   var character = Math.floor(Math.random() * possibleChar.length);
 //   randomPassword += possibleChar.charAt(character, character + 1);
 //   console.log(randomPassword);

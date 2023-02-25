@@ -4,7 +4,7 @@ var passLength = 10;
 var newPassLength = "";
 var confirmArr = [];
 var character = "";
-var result = [];
+
 var newArr = [];
 
 var selectLowercase = confirm("Include lowercase letters?");
@@ -20,12 +20,27 @@ if (selectUppercase) {
 
 newPassLength = passLength - (confirmArr.length);
 
-var randomPassword = function writePass(possibleChar, newPassLength) {
-	for (i=0; i<newPassLength; i++) { 
-	   newArr = result.push(possibleChar[Math.floor(Math.random() * possibleChar)]);
-}
-    console.log(newArr);
-}
+
+function selectRandomItems(arr, count) {
+    var result = [];
+    for (let i = 0; i < count; i++) {
+     var randomIndex = Math.floor(Math.random() * arr.length);
+     result.push(arr[randomIndex]);
+    }
+    return result;
+  }
+
+  var randomItems = selectRandomItems(possibleChar, newPassLength);
+
+  
+
+
+// var randomPassword = function writePass(possibleChar, newPassLength) {
+// 	for (i=0; i<newPassLength; i++) { 
+// 	   newArr = result.push(possibleChar[Math.floor(Math.random() * possibleChar)]);
+// }
+//     console.log(newArr);
+// }
 
 
 
