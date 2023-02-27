@@ -4,6 +4,10 @@
 
 This random password generator will prompt the user after the 'generate password' button on the webpage is 'clicked.' The first prompt will request the user to enter a length of the desired random password (within the parameters stated in the prompt). The user will then need to confirm which types of characters will be used. At least one character type must be selected or the user will be asked to confirm again. The password guarantees at least one character from each character type confirmed, and there may be duplicate characters used.
 
+    **The user must refresh the page after generating a password to generate another password**
+
+If the user does not refresh the page, the next generated password will still contain the previous confirmed character types.
+
 
 ## Installation
 
