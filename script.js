@@ -79,7 +79,7 @@ function chooseCharacters() {
 // Variable to account for the guaranteed characters.
   var newPassLength = passLength - (confirmArr.length);
 
-  // Function to select a random item from the concatenated array and push it into an array.
+  // Function to select a random item from the possible characters array and push it into a new array.
   function selectRandomItems() {
     var result = [];
     for (i = 0; i < newPassLength; i++) {
@@ -92,7 +92,7 @@ function chooseCharacters() {
    // Variable to call the random item function.
     var randomItems = selectRandomItems();
 
-   // Final varible that concatenates the guaranteed character array with the random items array and removes the commas within the array.
+   // Final varible that concatenates the guaranteed character array with the random items array and removes the commas within the array for the final result.
     var randomPassword = (guaranteeChar.concat(randomItems)).join("");
 
  
