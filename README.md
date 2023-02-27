@@ -15,7 +15,12 @@ N/A
 
 ## Credits
 
-N/A
+The source code for this project was obtained from the following github repo: https://github.com/coding-boot-camp/friendly-parakeet
+
+The random number calculation, Window.prompt(), Window.confirm(), and Window.alert() methods were obtained from MDN web docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+
+The select random items function was derived from a conglomerate of functions found at: https://stackoverflow.com/questions/9719570/generate-random-password-string-with-requirements-in-javascript
+
 
 Link to the page: https://shale00.github.io/Random-Password-Generator/
 
